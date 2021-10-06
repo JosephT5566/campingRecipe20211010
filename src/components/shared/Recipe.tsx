@@ -1,7 +1,42 @@
 import React from 'react';
-import { styled } from '@material-ui/core/styles';
+import { styled, makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
 import Typography from '@material-ui/core/Typography';
+
+const useStyle = makeStyles((theme) => ({
+	stuff: {
+		display: 'flex',
+		flexDirection: 'column',
+		flex: '1 0 0',
+		gap: '1em',
+		padding: '2em',
+		color: theme.palette.text.primary,
+		'&.day1': {
+			backgroundColor: theme.palette.background.day1,
+		},
+		'&.day2': {
+			backgroundColor: theme.palette.background.day2,
+		},
+		'&.day3': {
+			backgroundColor: theme.palette.background.day3,
+		},
+	},
+	content: {
+		padding: '2em',
+		display: 'flex',
+		flex: '3 0 0',
+		color: theme.palette.text.primary,
+		'&.day1': {
+			backgroundColor: theme.palette.background.day1,
+		},
+		'&.day2': {
+			backgroundColor: theme.palette.background.day2,
+		},
+		'&.day3': {
+			backgroundColor: theme.palette.background.day3,
+		},
+	},
+}));
 
 const StyledRecipe = styled('div')(({ theme }) => ({
 	minHeight: '100vh',
@@ -9,19 +44,6 @@ const StyledRecipe = styled('div')(({ theme }) => ({
 	display: 'flex',
 	gap: '1em',
 }));
-
-const StyledStuff = styled('div')({
-	display: 'flex',
-	flexDirection: 'column',
-	flex: '1 0 0',
-	gap: '1em',
-	padding: '2em',
-});
-
-const StyledContent = styled('div')({
-    padding: '2em',
-    flex: '3 0 0',
-});
 
 interface IRecipeProps {
 	day: number;
@@ -53,18 +75,22 @@ export class RecipeProps implements IRecipeProps {
 }
 
 export default function Recipe({ content, ...stuffInfo }: IRecipeProps) {
+	const classes = useStyle();
+
 	return (
 		<StyledRecipe>
 			<Stuff {...stuffInfo} />
-			<StyledContent>{content}</StyledContent>
+			<div className={`${classes.content} day${stuffInfo.day}`}>{content}</div>
 		</StyledRecipe>
 	);
 }
 
 const Stuff = (props: Omit<IRecipeProps, 'content'>) => {
 	const { day, icon, meal, name, stuffs, note } = props;
+	const classes = useStyle();
+
 	return (
-		<StyledStuff>
+		<div className={`${classes.stuff} day${day}`}>
 			<div style={{ display: 'flex', gap: '1em', alignItems: 'center' }}>
 				<div>
 					<div>{`Day${day}`}</div>
@@ -75,11 +101,11 @@ const Stuff = (props: Omit<IRecipeProps, 'content'>) => {
 			<div>{name}</div>
 			<Typography>{'Recipe'}</Typography>
 			<ul>
-				{stuffs.map((stuff) => (
-					<li>{stuff}</li>
+				{stuffs.map((stuff, index) => (
+					<li key={index}>{stuff}</li>
 				))}
 			</ul>
 			{note && <div>{note}</div>}
-		</StyledStuff>
+		</div>
 	);
 };
