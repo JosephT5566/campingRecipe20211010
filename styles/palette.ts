@@ -25,6 +25,11 @@ declare module '@material-ui/core/styles/createPalette' {
 		day2: string;
 		day3: string;
 	}
+	interface TypeText {
+		day1: string;
+		day2: string;
+		day3: string;
+	}
 }
 
 export const palette = {
@@ -40,6 +45,13 @@ export const palette = {
 		day1: '#053d57',
 		day2: '#6a804e',
 		day3: '#6e8199',
+	},
+	text: {
+		primary: '#fff',
+		secondary: '#053d57',
+		day1: '#97bcc7',
+		day2: '#dcffb0',
+		day3: '#bcf0ff',
 	},
 	error: {
 		main: '#ec5f5f',
