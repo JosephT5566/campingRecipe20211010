@@ -12,11 +12,7 @@ export default class MyDocument extends Document {
 					{/* PWA primary color */}
 					<meta name="theme-color" content={theme.palette.primary.main} />
 					<link
-						rel="stylesheet"
-						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-					/>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Arvo&family=Roboto:wght@400;500&display=swap"
 						rel="stylesheet"
 					/>
 					<meta property="og:title" content="Camping menu" />
@@ -28,10 +24,6 @@ export default class MyDocument extends Document {
 					<meta name="description" content="Camping menu at Hsinchu 2021" />
 					<link rel="manifest" href="/manifest.json" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					<link
-						href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Lobster&family=Vidaloka&family=Montserrat&display=swap"
-						rel="stylesheet"
-					/>
 					<link rel="preload" href="/fonts/Aloja-Light.woff" as="font" crossOrigin="" />
 				</Head>
 				<body>
