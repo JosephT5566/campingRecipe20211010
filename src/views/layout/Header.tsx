@@ -8,11 +8,11 @@ const useStyle = makeStyles((theme) => ({
 		padding: '0.5em',
 		display: 'grid',
 		placeItems: 'center',
-		backgroundColor: theme.palette.primary.main,
+		backgroundColor: theme.palette.common.white,
 		'& a': {
 			fontSize: '2em',
 			fontFamily: theme.typography.fontFamily,
-			color: theme.palette.common.white,
+			color: theme.palette.primary.main,
 		},
 	},
 }));
