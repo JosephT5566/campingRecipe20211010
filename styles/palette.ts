@@ -34,7 +34,7 @@ declare module '@material-ui/core/styles/createPalette' {
 
 export const palette = {
 	primary: {
-		main: '#639763',
+		main: '#053d57',
 	},
 	secondary: {
 		main: '#ffbb2f',

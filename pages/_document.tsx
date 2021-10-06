@@ -32,6 +32,7 @@ export default class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Lobster&family=Vidaloka&family=Montserrat&display=swap"
 						rel="stylesheet"
 					/>
+					<link rel="preload" href="/fonts/Aloja-Light.woff" as="font" crossOrigin="" />
 				</Head>
 				<body>
 					<Main />

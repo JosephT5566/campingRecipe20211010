@@ -11,7 +11,8 @@ const useStyle = makeStyles((theme) => ({
 		backgroundColor: theme.palette.common.white,
 		'& a': {
 			fontSize: '2em',
-			fontFamily: theme.typography.fontFamily,
+			// fontFamily: theme.typography.fontFamily,
+			fontFamily: 'Aloja',
 			color: theme.palette.primary.main,
 		},
 	},
