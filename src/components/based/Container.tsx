@@ -8,19 +8,18 @@ interface Props {
 const useStyle = makeStyles((theme) => ({
 	container: {
 		minHeight: '100vh',
-		paddingTop: theme.layout.header.height,
-		paddingInline: '10em',
-		paddingBottom: '1em',
+		// paddingInline: '10em',
+		// paddingBottom: '1em',
 		backgroundColor: theme.palette.background.default,
 		display: 'flex',
 		flexDirection: 'column',
-		gap: '2rem',
-		[theme.breakpoints.down('md')]: {
-			paddingInline: '5em',
-		},
-		[theme.breakpoints.down('xs')]: {
-			paddingInline: '1em',
-		},
+		gap: '0rem',
+		// [theme.breakpoints.down('md')]: {
+		// 	paddingInline: '5em',
+		// },
+		// [theme.breakpoints.down('xs')]: {
+		// 	paddingInline: '1em',
+		// },
 	},
 }));
 
