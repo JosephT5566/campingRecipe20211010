@@ -4,7 +4,7 @@ import { IMAGES } from './images';
 export const recipe1 = new RecipeProps({
 	day: 1,
 	meal: 'dinner',
-	icon: IMAGES.camping,
+	icon: IMAGES.dinner,
 	name: '大阪燒',
 	stuffs: [
 		`低筋麵粉 15克
@@ -42,7 +42,7 @@ STEP 6：
 export const recipe2 = new RecipeProps({
 	day: 1,
 	meal: 'dinner',
-	icon: IMAGES.camping,
+	icon: IMAGES.dinner,
 	name: '烤肉 火鍋',
 	content: ``,
 });
@@ -50,7 +50,7 @@ export const recipe2 = new RecipeProps({
 export const recipe3 = new RecipeProps({
 	day: 2,
 	meal: 'breakfast',
-	icon: IMAGES.camping,
+	icon: IMAGES.breakfast,
 	name: '粉漿蛋餅',
 	stuffs: ['中筋麵粉 3大匙', '地瓜粉 1大匙', '太白粉 1大匙', '冷水 4又1/2大匙', '鹽 1/4小匙', '蔥', '蛋 1顆', '醬料'],
 	note: '以上為一份蛋餅所需的份量，若要一次做多份可等比增加',
@@ -72,7 +72,7 @@ STEP 5：
 export const recipe4 = new RecipeProps({
 	day: 2,
 	meal: 'breakfast',
-	icon: IMAGES.camping,
+	icon: IMAGES.breakfast,
 	name: '豬肉丸子',
 	stuffs: ['豬絞肉 300g', '板豆腐 100g', '胡椒粉', '鹽', '太白粉 (or玉米粉', '雞蛋 1顆'],
 	content: `香菇做`,
@@ -81,7 +81,7 @@ export const recipe4 = new RecipeProps({
 export const recipe5 = new RecipeProps({
 	day: 2,
 	meal: 'lunch',
-	icon: IMAGES.camping,
+	icon: IMAGES.lunch,
 	name: '親子丼',
 	stuffs: ['雞腿肉', '洋蔥', '雞蛋', '日式醬油+味醂（1:1）', '砂糖', '鮮味炒手', '米酒'],
 	content: `STEP 1：
@@ -102,7 +102,7 @@ STEP 6：
 export const recipe6 = new RecipeProps({
 	day: 2,
 	meal: 'lunch',
-	icon: IMAGES.camping,
+	icon: IMAGES.lunch,
 	name: '辣味時蔬豬肉義大利麵',
 	stuffs: ['清炒辣味時蔬豬肉', '麵條', '鹽', '橄欖油'],
 	content: `STEP 1：
@@ -124,7 +124,7 @@ STEP 4：
 export const recipe7 = new RecipeProps({
 	day: 2,
 	meal: 'dinner',
-	icon: IMAGES.camping,
+	icon: IMAGES.dinner_white,
 	name: '剝皮辣椒雞鍋',
 	stuffs: ['剝皮辣椒一罐', '雞腿肉（costco)', '薑', '醬油', '米酒', '鹽'],
 	content: `STEP 1：
@@ -143,7 +143,7 @@ STEP 5：
 export const recipe8 = new RecipeProps({
 	day: 3,
 	meal: 'breakfast',
-	icon: IMAGES.camping,
+	icon: IMAGES.breakfast,
 	name: 'Bagel or 煎餃',
 	stuffs: ['煎餃', '貝果（costco）'],
 	content: `STEP 1：
