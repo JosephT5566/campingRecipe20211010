@@ -12,7 +12,8 @@ const useStyle = makeStyles((theme) => ({
 		position: 'fixed',
 		display: 'grid',
 		placeItems: 'center',
-		backgroundColor: theme.palette.common.white,
+		backgroundColor: `${theme.palette.common.white}FFFDA`,
+		backdropFilter: 'blur(4px)',
 		'& a': {
 			fontSize: '2em',
 			// fontFamily: theme.typography.fontFamily,

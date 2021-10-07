@@ -16,8 +16,8 @@ const useStyle = makeStyles((theme) => ({
 			gap: '1em',
 			flex: '1 0 0',
 			[theme.breakpoints.down('sm')]: {
-                flexDirection: 'column',
-                gap: '0.2em',
+				flexDirection: 'column',
+				gap: '0.2em',
 			},
 		},
 	},
@@ -49,6 +49,13 @@ const useStyle = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down('sm')]: {
 			flexDirection: 'column',
+		},
+		'& .image': {
+			flex: '1 1 0',
+			maxWidth: '30%',
+			[theme.breakpoints.down('sm')]: {
+				maxWidth: '10rem',
+			},
 		},
 	},
 	copyright: {
@@ -128,8 +135,8 @@ const Outline = () => {
 					<li>{'Bagel or 煎餃'}</li>
 				</ul>
 			</div>
-			<div>
-				<Image src={IMAGES.camping} width={'100%'} height={'100%'} />
+			<div className={'image'}>
+				<Image src={IMAGES.camping} width={'100%'} height={'100%'} layout={'responsive'} />
 			</div>
 		</div>
 	);
@@ -138,5 +145,5 @@ const Outline = () => {
 const Copyright = () => {
 	const classes = useStyle();
 
-	return <div className={classes.copyright}>{'Camping Menu | Daisy Design ©'}</div>;
+	return <div className={classes.copyright}>{'Camping Menu | © Daisy 2021'}</div>;
 };

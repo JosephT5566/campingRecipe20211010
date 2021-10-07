@@ -156,7 +156,9 @@ const Stuff = (
 						{meal}
 					</Typography>
 				</div>
-				<Image src={icon} width={'100%'} height={'100%'} />
+				<div style={{ flex: '1 0 0' }}>
+					<Image src={icon} width={'100'} height={'100'} layout={'responsive'} />
+				</div>
 			</div>
 			<Typography variant={'h1'} style={{ fontWeight: 'bold' }}>
 				{name}
