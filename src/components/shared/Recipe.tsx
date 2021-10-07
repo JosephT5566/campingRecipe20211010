@@ -1,9 +1,12 @@
-import React from 'react';
-import { styled, makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
 import Image from 'next/image';
+
+import { styled, makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
 import PushPinIcon from '@mui/icons-material/PushPin';
+import { SwitchButton } from '../shared/SwitchButtons';
 
 const useStyle = makeStyles((theme) => ({
 	stuff: {
@@ -39,6 +42,7 @@ const useStyle = makeStyles((theme) => ({
 		display: 'flex',
 		flex: '3 0 0',
 		color: theme.palette.text.primary,
+		transition: '0.5s',
 		'&.day1': {
 			backgroundColor: theme.palette.background.day1,
 		},
@@ -48,6 +52,16 @@ const useStyle = makeStyles((theme) => ({
 		'&.day3': {
 			backgroundColor: theme.palette.background.day3,
 		},
+		[theme.breakpoints.down('sm')]: {
+			maxWidth: '80vw',
+			position: 'absolute',
+			minHeight: '100%',
+			right: '-80vw',
+			'& *': { fontSize: '0.875rem' },
+			'&.display': {
+				right: '0',
+			},
+		},
 	},
 }));
 
@@ -56,6 +70,7 @@ const StyledRecipe = styled('div')(({ theme }) => ({
 	backgroundColor: theme.palette.background.default,
 	display: 'flex',
 	gap: '1em',
+	position: 'relative',
 }));
 
 interface IRecipeProps {
@@ -92,12 +107,13 @@ export class RecipeProps implements IRecipeProps {
 
 export default function Recipe({ content, ...stuffInfo }: IRecipeProps) {
 	const classes = useStyle();
+	const [isDisplay, setIsDisplay] = useState(false);
 
 	return (
 		<StyledRecipe>
-			<Stuff {...stuffInfo} />
+			<Stuff {...stuffInfo} isDisplay={isDisplay} setIsDisplay={setIsDisplay} />
 			<div
-				className={`${classes.content} day${stuffInfo.day}`}
+				className={`${classes.content} day${stuffInfo.day} ${isDisplay ? 'display' : ''}`}
 				style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}
 			>
 				{stuffInfo.hint && (
@@ -116,13 +132,20 @@ export default function Recipe({ content, ...stuffInfo }: IRecipeProps) {
 	);
 }
 
-const Stuff = (props: Omit<IRecipeProps, 'content'>) => {
-	const { day, icon, meal, name, stuffs, note } = props;
+const Stuff = (
+	props: Omit<IRecipeProps, 'content'> & {
+		isDisplay: boolean;
+		setIsDisplay: React.Dispatch<React.SetStateAction<boolean>>;
+	}
+) => {
+	const { day, icon, meal, name, stuffs, note, isDisplay, setIsDisplay } = props;
 	const classes = useStyle();
+	const isViewSm = useMediaQuery(useTheme().breakpoints.down('sm'));
 
 	return (
 		<div className={`${classes.stuff} day${day}`}>
-			<div style={{ display: 'flex', gap: '1em', alignItems: 'center' }}>
+			<div>{isViewSm && <SwitchButton isTrue={isDisplay} setIsTrue={setIsDisplay} />}</div>
+			<div style={{ display: 'flex', gap: '1em', alignItems: 'center', justifyContent: 'space-between' }}>
 				<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5em' }}>
 					<Typography variant={'h2'}>{`Day${day}`}</Typography>
 					<Typography
