@@ -117,7 +117,7 @@ const Stuff = (props: Omit<IRecipeProps, 'content'>) => {
 						{meal}
 					</Typography>
 				</div>
-				<Image src={icon} width={'50px'} height={'50px'} />
+				<Image src={icon} width={'100%'} height={'100%'} />
 			</div>
 			<Typography variant={'h1'} style={{ fontWeight: 'bold' }}>
 				{name}
