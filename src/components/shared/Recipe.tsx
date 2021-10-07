@@ -64,6 +64,7 @@ interface IRecipeProps {
 	stuffs?: Array<string>;
 	note?: string;
 	content: string;
+	hint?: string;
 }
 
 export class RecipeProps implements IRecipeProps {
@@ -74,6 +75,7 @@ export class RecipeProps implements IRecipeProps {
 	stuffs?: Array<string>;
 	note?: string;
 	content: string;
+	hint?: string;
 	constructor(params: RecipeProps) {
 		this.day = params.day;
 		this.meal = params.meal;
@@ -82,6 +84,7 @@ export class RecipeProps implements IRecipeProps {
 		this.stuffs = params.stuffs;
 		this.note = params.note;
 		this.content = params.content;
+		this.hint = params.hint;
 	}
 }
 
