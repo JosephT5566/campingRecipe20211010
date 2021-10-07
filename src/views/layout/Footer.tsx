@@ -21,7 +21,7 @@ export default function Footer() {
 	return (
 		<footer className={classes.footer}>
 			<div style={{ width: '10em', height: '10em' }}>
-				<Image src={IMAGES.footer} width={'100%'} height={'100%'} layout={'responsive'} />
+				<Image src={IMAGES.footer} width={'100%'} height={'100%'} layout={'responsive'} alt={'footer'} />
 			</div>
 			<Typography variant={'body2'}>{'© Daisy 2021'}</Typography>
 		</footer>

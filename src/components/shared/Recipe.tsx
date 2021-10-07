@@ -157,7 +157,7 @@ const Stuff = (
 					</Typography>
 				</div>
 				<div style={{ flex: '1 0 0' }}>
-					<Image src={icon} width={'100'} height={'100'} layout={'responsive'} />
+					<Image src={icon} width={'100'} height={'100'} layout={'responsive'} alt={meal} />
 				</div>
 			</div>
 			<Typography variant={'h1'} style={{ fontWeight: 'bold' }}>

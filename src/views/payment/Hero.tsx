@@ -136,7 +136,7 @@ const Outline = () => {
 				</ul>
 			</div>
 			<div className={'image'}>
-				<Image src={IMAGES.camping} width={'100%'} height={'100%'} layout={'responsive'} />
+				<Image src={IMAGES.camping} width={'100%'} height={'100%'} layout={'responsive'} alt={'hero'} />
 			</div>
 		</div>
 	);
