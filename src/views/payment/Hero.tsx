@@ -11,6 +11,15 @@ const useStyle = makeStyles((theme) => ({
 		backgroundColor: theme.palette.primary.main,
 		display: 'flex',
 		flexDirection: 'column',
+		'& .content': {
+			display: 'flex',
+			gap: '1em',
+			flex: '1 0 0',
+			[theme.breakpoints.down('sm')]: {
+                flexDirection: 'column',
+                gap: '0.2em',
+			},
+		},
 	},
 	sideBar: {
 		backgroundColor: theme.palette.background.default,
@@ -21,7 +30,7 @@ const useStyle = makeStyles((theme) => ({
 		alignItems: 'center',
 		justifyContent: 'center',
 		padding: '2em',
-        color: theme.palette.primary.main,
+		color: theme.palette.primary.main,
 		'& .header': {
 			fontFamily: 'Aloja',
 		},
@@ -38,6 +47,9 @@ const useStyle = makeStyles((theme) => ({
 		'& *': {
 			fontWeight: 'bold',
 		},
+		[theme.breakpoints.down('sm')]: {
+			flexDirection: 'column',
+		},
 	},
 	copyright: {
 		backgroundColor: theme.palette.primary.main,
@@ -53,7 +65,7 @@ export default function Hero() {
 
 	return (
 		<div className={classes.hero}>
-			<div style={{ display: 'flex', gap: '1em', flex: '1 0 0' }}>
+			<div className={'content'}>
 				<SideBar />
 				<Outline />
 			</div>
