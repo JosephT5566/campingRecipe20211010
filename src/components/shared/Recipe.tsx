@@ -20,6 +20,17 @@ const useStyle = makeStyles((theme) => ({
 		'&.day3': {
 			backgroundColor: theme.palette.background.day3,
 		},
+		'& .colorText': {
+			'&.day1': {
+				color: theme.palette.text.day1,
+			},
+			'&.day2': {
+				color: theme.palette.text.day2,
+			},
+			'&.day3': {
+				color: theme.palette.text.day3,
+			},
+		},
 	},
 	content: {
 		padding: '2em',
@@ -39,7 +50,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const StyledRecipe = styled('div')(({ theme }) => ({
-	minHeight: '100vh',
+	// minHeight: '100vh',
 	backgroundColor: theme.palette.background.default,
 	display: 'flex',
 	gap: '1em',
@@ -50,7 +61,7 @@ interface IRecipeProps {
 	meal: 'breakfast' | 'lunch' | 'dinner';
 	icon: string;
 	name: string;
-	stuffs: Array<string>;
+	stuffs?: Array<string>;
 	note?: string;
 	content: string;
 }
@@ -60,7 +71,7 @@ export class RecipeProps implements IRecipeProps {
 	meal: 'breakfast' | 'lunch' | 'dinner';
 	icon: string;
 	name: string;
-	stuffs: Array<string>;
+	stuffs?: Array<string>;
 	note?: string;
 	content: string;
 	constructor(params: RecipeProps) {
@@ -80,7 +91,11 @@ export default function Recipe({ content, ...stuffInfo }: IRecipeProps) {
 	return (
 		<StyledRecipe>
 			<Stuff {...stuffInfo} />
-			<div className={`${classes.content} day${stuffInfo.day}`}>{content}</div>
+			<div className={`${classes.content} day${stuffInfo.day}`}>
+				<Typography variant={'body1'} style={{ whiteSpace: 'pre-wrap' }}>
+					{content}
+				</Typography>
+			</div>
 		</StyledRecipe>
 	);
 }
@@ -92,19 +107,33 @@ const Stuff = (props: Omit<IRecipeProps, 'content'>) => {
 	return (
 		<div className={`${classes.stuff} day${day}`}>
 			<div style={{ display: 'flex', gap: '1em', alignItems: 'center' }}>
-				<div>
-					<div>{`Day${day}`}</div>
-					<div>{meal}</div>
+				<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5em' }}>
+					<Typography variant={'h2'}>{`Day${day}`}</Typography>
+					<Typography
+						className={`colorText day${day}`}
+						variant={'subtitle1'}
+						style={{ textTransform: 'uppercase' }}
+					>
+						{meal}
+					</Typography>
 				</div>
 				<Image src={icon} width={'50px'} height={'50px'} />
 			</div>
-			<div>{name}</div>
-			<Typography>{'Recipe'}</Typography>
-			<ul>
-				{stuffs.map((stuff, index) => (
-					<li key={index}>{stuff}</li>
-				))}
-			</ul>
+			<Typography variant={'h1'} style={{ fontWeight: 'bold' }}>
+				{name}
+			</Typography>
+			<Typography className={`colorText day${day}`} variant={'h5'}>
+				{'RECIPE'}
+			</Typography>
+			{stuffs && (
+				<ul>
+					{stuffs.map((stuff, index) => (
+						<li key={index} style={{ whiteSpace: 'pre-wrap' }}>
+							{stuff}
+						</li>
+					))}
+				</ul>
+			)}
 			{note && <div>{note}</div>}
 		</div>
 	);
