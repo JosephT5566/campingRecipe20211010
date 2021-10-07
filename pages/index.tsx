@@ -17,8 +17,8 @@ const Home: NextPage = () => {
 			</Head>
 
 			<Hero />
-			{recipes.map((recipe) => (
-				<Recipe {...recipe} />
+			{recipes.map((recipe, index) => (
+				<Recipe {...recipe} key={index} />
 			))}
 		</Container>
 	);
