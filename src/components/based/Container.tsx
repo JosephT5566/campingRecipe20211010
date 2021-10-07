@@ -15,6 +15,7 @@ const useStyle = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '0.5rem',
+		overflow: 'hidden',
 		// [theme.breakpoints.down('md')]: {
 		// 	paddingInline: '5em',
 		// },
