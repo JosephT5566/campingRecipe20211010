@@ -14,9 +14,11 @@ jobs:
 
             - name: Install and Build
               run: |
-                  yarn install && yarn deploy
+                  yarn install && yarn build && yarn export
+            - name: Add .nojekyll file
+              run: touch ./out/.nojekyll
             - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@4.1.0
+              uses: JamesIves/github-pages-deploy-action@4.1.1
               with:
                   branch: gh-pages
-                  folder: build
+                  folder: out
