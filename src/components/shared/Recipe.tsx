@@ -2,6 +2,8 @@ import React from 'react';
 import { styled, makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
 import Typography from '@material-ui/core/Typography';
+import Icon from '@material-ui/core/Icon';
+import PushPinIcon from '@mui/icons-material/PushPin';
 
 const useStyle = makeStyles((theme) => ({
 	stuff: {
@@ -50,7 +52,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const StyledRecipe = styled('div')(({ theme }) => ({
-	// minHeight: '100vh',
+	minHeight: `calc(100vh - ${theme.layout.header.height})`,
 	backgroundColor: theme.palette.background.default,
 	display: 'flex',
 	gap: '1em',
@@ -94,7 +96,18 @@ export default function Recipe({ content, ...stuffInfo }: IRecipeProps) {
 	return (
 		<StyledRecipe>
 			<Stuff {...stuffInfo} />
-			<div className={`${classes.content} day${stuffInfo.day}`}>
+			<div
+				className={`${classes.content} day${stuffInfo.day}`}
+				style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}
+			>
+				{stuffInfo.hint && (
+					<div style={{ display: 'flex', gap: '1em' }}>
+						<Icon color={'secondary'}>
+							<PushPinIcon />
+						</Icon>
+						<Typography variant={'body1'}>{stuffInfo.hint}</Typography>
+					</div>
+				)}
 				<Typography variant={'body1'} style={{ whiteSpace: 'pre-wrap' }}>
 					{content}
 				</Typography>
