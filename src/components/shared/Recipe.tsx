@@ -156,7 +156,7 @@ const Stuff = (
 						{meal}
 					</Typography>
 				</div>
-				<div style={{ flex: '1 0 0' }}>
+				<div style={{ flex: '1 0 0', maxWidth: '15em' }}>
 					<Image src={icon} width={'100'} height={'100'} layout={'responsive'} alt={meal} />
 				</div>
 			</div>
