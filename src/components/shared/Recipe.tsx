@@ -74,6 +74,7 @@ const StyledRecipe = styled('div')(({ theme }) => ({
 }));
 
 interface IRecipeProps {
+	id?: string;
 	day: number;
 	meal: 'breakfast' | 'lunch' | 'dinner';
 	icon: string;
@@ -85,6 +86,7 @@ interface IRecipeProps {
 }
 
 export class RecipeProps implements IRecipeProps {
+	id?: string;
 	day: number;
 	meal: 'breakfast' | 'lunch' | 'dinner';
 	icon: string;
@@ -94,6 +96,7 @@ export class RecipeProps implements IRecipeProps {
 	content: string;
 	hint?: string;
 	constructor(params: RecipeProps) {
+		this.id = params.id;
 		this.day = params.day;
 		this.meal = params.meal;
 		this.icon = params.icon;
@@ -105,12 +108,12 @@ export class RecipeProps implements IRecipeProps {
 	}
 }
 
-export default function Recipe({ content, ...stuffInfo }: IRecipeProps) {
+export default function Recipe({ id, content, ...stuffInfo }: IRecipeProps) {
 	const classes = useStyle();
 	const [isDisplay, setIsDisplay] = useState(false);
 
 	return (
-		<StyledRecipe>
+		<StyledRecipe id={id}>
 			<Stuff {...stuffInfo} isDisplay={isDisplay} setIsDisplay={setIsDisplay} />
 			<div
 				className={`${classes.content} day${stuffInfo.day} ${isDisplay ? 'display' : ''}`}

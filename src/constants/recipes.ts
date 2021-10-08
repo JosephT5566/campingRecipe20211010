@@ -1,7 +1,9 @@
 import { RecipeProps } from '../components/shared/Recipe';
 import { IMAGES } from './images';
+import { NAV_ID } from './static';
 
 export const recipe1 = new RecipeProps({
+	id: NAV_ID.day1_1,
 	day: 1,
 	meal: 'dinner',
 	icon: IMAGES.dinner,
@@ -48,6 +50,7 @@ export const recipe2 = new RecipeProps({
 });
 
 export const recipe3 = new RecipeProps({
+	id: NAV_ID.day2_1,
 	day: 2,
 	meal: 'breakfast',
 	icon: IMAGES.breakfast,
@@ -86,6 +89,7 @@ STEP 4：
 });
 
 export const recipe5 = new RecipeProps({
+	id: NAV_ID.day2_2,
 	day: 2,
 	meal: 'lunch',
 	icon: IMAGES.lunch,
@@ -129,6 +133,7 @@ STEP 4：
 });
 
 export const recipe7 = new RecipeProps({
+	id: NAV_ID.day2_3,
 	day: 2,
 	meal: 'dinner',
 	icon: IMAGES.dinner_white,
@@ -148,6 +153,7 @@ STEP 5：
 });
 
 export const recipe8 = new RecipeProps({
+	id: NAV_ID.day3_1,
 	day: 3,
 	meal: 'breakfast',
 	icon: IMAGES.breakfast,

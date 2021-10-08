@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 import { IMAGES } from '../../constants/images';
+import { NAV_ID } from '../../constants/static';
 
 const useStyle = makeStyles((theme) => ({
 	hero: {
@@ -58,6 +59,30 @@ const useStyle = makeStyles((theme) => ({
 			},
 		},
 	},
+	menu: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'flex-start',
+		gap: '0.5em',
+		'& a': {
+			position: 'relative',
+			'&::after': {
+				content: `''`,
+				position: 'absolute',
+				width: '0.5em',
+				height: 2,
+				backgroundColor: theme.palette.secondary.main,
+				bottom: '-0.3em',
+				left: 0,
+				transition: `${theme.transitions.duration.standard}ms`,
+			},
+			'&:hover': {
+				'&::after': {
+					width: '100%',
+				},
+			},
+		},
+	},
 	copyright: {
 		backgroundColor: theme.palette.primary.main,
 		display: 'grid',
@@ -101,36 +126,30 @@ const Outline = () => {
 
 	return (
 		<div className={classes.outline}>
-			<div
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					gap: '0.5em',
-				}}
-			>
-				<Typography variant={'body1'}>{'Day1 晚餐'}</Typography>
+			<div className={classes.menu}>
+				<a href={`#${NAV_ID.day1_1}`}>{'Day1 晚餐'}</a>
 				<ul>
 					<li>{'大阪燒'}</li>
 					<li>{'烤肉'}</li>
 					<li>{'火鍋 (兼消夜?)'}</li>
 				</ul>
-				<Typography variant={'body1'}>{'Day2 早餐'}</Typography>
+				<a href={`#${NAV_ID.day2_1}`}>{'Day2 早餐'}</a>
 				<ul>
 					<li>{'粉漿蛋餅'}</li>
 					<li>{'豬肉丸子'}</li>
 				</ul>
-				<Typography variant={'body1'}>{'Day2 午餐'}</Typography>
+				<a href={`#${NAV_ID.day2_2}`}>{'Day2 午餐'}</a>
 				<ul>
 					<li>{'親子丼'}</li>
 					<li>{'清炒辣味時蔬豬肉義大利麵'}</li>
 					<li>{'湯品'}</li>
 				</ul>
-				<Typography variant={'body1'}>{'Day2 晚餐'}</Typography>
+				<a href={`#${NAV_ID.day2_3}`}>{'Day2 晚餐'}</a>
 				<ul>
 					<li>{'剝皮辣椒雞鍋'}</li>
 					<li>{'烤肉 or 咖哩'}</li>
 				</ul>
-				<Typography variant={'body1'}>{'Day3 早餐'}</Typography>
+				<a href={`#${NAV_ID.day3_1}`}>{'Day3 早餐'}</a>
 				<ul>
 					<li>{'Bagel or 煎餃'}</li>
 				</ul>

@@ -27,7 +27,7 @@ export default function Header() {
 	const classes = useStyle();
 	return (
 		<header className={classes.header}>
-			<a href="/">{'Camping Menu'}</a>
+			<a href="#">{'Camping Menu'}</a>
 		</header>
 	);
 }
