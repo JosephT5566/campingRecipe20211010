@@ -1,6 +1,6 @@
-[Deploy NEXT.JS App to GitHub Pages](https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a/)
-[Invalid images config](https://nextjs.org/docs/messages/invalid-images-config)
-[Custom loaders are not recognized by next export](https://github.com/vercel/next.js/issues/21079)
+* [Deploy NEXT.JS App to GitHub Pages](https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a/)
+* [Invalid images config](https://nextjs.org/docs/messages/invalid-images-config)
+* [Custom loaders are not recognized by next export](https://github.com/vercel/next.js/issues/21079)
 
 ```yml
 name: Deploy gh-pages
