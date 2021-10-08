@@ -2,6 +2,7 @@ import React from 'react';
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import theme from '../styles/theme';
+import { IMAGES } from '../src/constants/images';
 
 export default class MyDocument extends Document {
 	render() {
@@ -16,12 +17,12 @@ export default class MyDocument extends Document {
 						rel="stylesheet"
 					/>
 					<meta property="og:title" content="Camping menu" />
-					<meta property="og:description" content="Camping menu at Hsinchu 2021" />
+					<meta property="og:description" content="The camping recipe menu in Hsinchu 2021" />
 					<meta property="og:type" content="website" />
-					<meta property="og:image" content="/cover.jpg" />
+					<meta property="og:image" content="/images/camping.png" />
 					<meta property="og:site_name" content="Camping menu" />
-					<meta property="og:url" content="https://josephtseng-tw.com/" />
-					<meta name="description" content="Camping menu at Hsinchu 2021" />
+					<meta property="og:url" content="https://camping-recipe202110.vercel.app/" />
+					<meta name="description" content="The camping recipe menu in Hsinchu 2021" />
 					<link rel="manifest" href="/manifest.json" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link rel="preload" href="/fonts/Aloja-Light.woff" as="font" crossOrigin="" />
